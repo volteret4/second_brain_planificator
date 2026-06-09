@@ -1,0 +1,40 @@
+// Zellij layout — workspace de notas
+// Uso: zellij --layout ~/.config/zellij/layouts/notes.kdl
+// O desde alias: alias notes="zellij --layout ~/gits/pollo/second_brain/configs/zellij/notes-layout.kdl"
+
+layout {
+    // Barra de tabs
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+
+    // Layout principal: editor grande | panel derecho
+    pane split_direction="vertical" {
+
+        // Editor Emacs — 75% del ancho
+        pane size="75%" name="emacs" {
+            command "emacsclient"
+            args "-t" "--create-frame"
+        }
+
+        // Panel derecho — búsqueda + terminal
+        pane size="25%" split_direction="horizontal" {
+
+            // Búsqueda rg/fzf — 40% del panel
+            pane size="40%" name="busqueda" {
+                command "zsh"
+                args "-c" "echo '  rg + fzf — buscar en notas' && zsh"
+            }
+
+            // Terminal general — 60% del panel
+            pane size="60%" name="terminal" {
+                command "zsh"
+            }
+        }
+    }
+
+    // Barra de estado
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+}

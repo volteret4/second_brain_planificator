@@ -1,0 +1,7 @@
+[Unit]
+Description=Sync MD checkboxes → org-mode (ejecución horaria)
+
+[Service]
+Type=oneshot
+ExecStart=/home/huan/Scripts/python_venv/bin/python3 \
+    /home/huan/gits/pollo/second_brain/scripts/sync/md_to_org.py

@@ -1,0 +1,40 @@
+{
+    "vault": {
+        "path": "/home/huan/notes",
+        "excluded_paths": [".git", ".gitignore", ".stfolder", ".obsidian", ".trash", "Plantillas", "calendars"]
+    },
+    "db": {
+        "path": "/home/huan/Scripts/utilities/tiddlywiki/wiki_obsidian.db",
+        "log_file": "/home/huan/Scripts/utilities/tiddlywiki/wiki_sync.log",
+        "optimize_frequency_days": 7
+    },
+    "sync": {
+        "root_dirs": [
+            "/home/huan/notes/Spaces/Wiki",
+            "/home/huan/notes/Spaces/Blogs",
+            "/home/huan/notes/Spaces/Proyectos Interesantes",
+            "/home/huan/notes/Recortes"
+        ],
+        "vdirsyncer_calendars": "/home/huan/.config/vdirsyncer/calendars/tareas",
+        "caldav_vault_dest": "/home/huan/notes/calendars/tareas"
+    },
+    "tasks": {
+        "caldav_url": "",
+        "taskwarrior_bin": "task",
+        "checkpoint_file": "/home/huan/gits/pollo/second_brain/.task_checkpoint.json",
+        "watch_dirs": [
+            "/home/huan/notes/Spaces/Wiki",
+            "/home/huan/notes/Important"
+        ],
+        "excluded_files": [
+            "/home/huan/notes/Spaces/Wiki/Markor/Proyectos/enfermeria/QUIRÓN.md"
+        ]
+    },
+    "publish": {
+        "hugo_sites": []
+    },
+    "pepecono": {
+        "note": "Scripts con rutas /home/pepe/ se ejecutan en el servidor pepecono. Mantienen el vault sincronizado via Syncthing sin encender el PC local.",
+        "vault_path": "/home/pepe/notes"
+    }
+}

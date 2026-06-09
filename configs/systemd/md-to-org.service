@@ -1,0 +1,17 @@
+[Unit]
+Description=Sync MD checkboxes → org-mode al apagar o suspender
+# Se ejecuta ExecStop justo antes de apagar/suspender
+DefaultDependencies=no
+Before=shutdown.target sleep.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+# ExecStart vacío — solo nos importa el stop (shutdown)
+ExecStart=/bin/true
+ExecStop=/home/huan/Scripts/python_venv/bin/python3 \
+    /home/huan/gits/pollo/second_brain/scripts/sync/md_to_org.py
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target

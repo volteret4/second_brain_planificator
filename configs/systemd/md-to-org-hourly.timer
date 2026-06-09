@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync MD checkboxes → org-mode cada hora
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
