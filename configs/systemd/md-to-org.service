@@ -9,7 +9,7 @@ Type=oneshot
 RemainAfterExit=yes
 # ExecStart vacío — solo nos importa el stop (shutdown)
 ExecStart=/bin/true
-ExecStop=/home/huan/Scripts/python_venv/bin/python3 \
+ExecStop=/home/huan/.local/share/venvs/second_brain/bin/python3 \
     /home/huan/gits/pollo/second_brain/scripts/sync/md_to_org.py
 TimeoutStopSec=30
 

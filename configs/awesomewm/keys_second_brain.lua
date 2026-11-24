@@ -26,10 +26,21 @@ local keys = awful.util.table.join(
         { description = "añadir tarea (org-capture)", group = "second brain" }),
 
     -- ── Añadir evento al calendario ───────────────────────────────────────────
-    -- Abre org-capture con template "e" (SCHEDULED) → org-caldav → Radicale
-    awful.key({ "Mod4", "Shift" }, "e",
+    -- Con Control: org-capture en Emacs (selector de fecha interactivo → CalDAV)
+    awful.key({ "Mod4", "Control" }, "e",
         function() awful.spawn(SB .. "sb_add_event.sh") end,
-        { description = "añadir evento (org-caldav)", group = "second brain" }),
+        { description = "añadir evento (org-capture)", group = "second brain" }),
+
+    -- Con Shift: rofi directo → inbox.org (sin abrir Emacs)
+    awful.key({ "Mod4", "Shift" }, "e",
+        function() awful.spawn(SB .. "sb_add_event_rofi.sh") end,
+        { description = "añadir evento rápido (rofi)", group = "second brain" }),
+
+    -- ── Abrir notes en Emacs ──────────────────────────────────────────────────
+    -- Dired sidebar izquierdo (~/notes/) + GUIA.md en panel principal
+    awful.key({ "Mod4" }, "n",
+        function() awful.spawn(SB .. "sb_open_notes.sh") end,
+        { description = "abrir ~/notes en Emacs", group = "second brain" }),
 
     -- ── Buscar y abrir nota ───────────────────────────────────────────────────
     -- Terminal flotante con rg + fzf, abre en emacsclient

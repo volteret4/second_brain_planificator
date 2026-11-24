@@ -1,0 +1,11 @@
+# Runtime
+.task_checkpoint.json
+*.db
+*.log
+*.pyc
+__pycache__/
+.DS_Store
+
+# Secretos
+.encrypted.env
+*.key

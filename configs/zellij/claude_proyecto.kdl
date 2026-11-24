@@ -1,0 +1,20 @@
+layout {
+    cwd "{{PROJECT_DIR}}"
+
+    pane split_direction="horizontal" {
+        pane size="40%" {
+            command "claude" {
+             args "--continue"
+             }
+        }
+
+        pane split_direction="vertical" {
+            pane {
+                command "yazi"
+            }
+
+            pane {
+                command "ssh pepecono"}
+        }
+    }
+}

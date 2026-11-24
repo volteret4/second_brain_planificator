@@ -4,3 +4,4 @@
 (package! denote)           ; gestión de notas con nomenclatura timestamp+tags
 (package! consult-notes)    ; búsqueda fuzzy de notas integrada en consult/vertico
 (package! org-caldav)       ; sync org-agenda ↔ CalDAV (Radicale)
+(package! ox-hugo)          ; exportar org → markdown compatible con Hugo
